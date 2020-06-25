@@ -1,25 +1,32 @@
-import React, { useContext } from 'react'
-import { UserContext } from '../AppContext';
+import React, { useContext, useState, useEffect } from 'react'
+import { UserContext, JobsContext } from '../AppContext';
 import { useHistory } from 'react-router';
+import { Redirect } from 'react-router-dom';
 
 const Login = () => {
     let history = useHistory()
-    const { user, email, password, setLogged, setEmail, setPassword } = useContext(UserContext)
-
+    const { user, email, password, setEmail, setPassword } = useContext(UserContext);
+    const { isLogged, setLogged } = useContext(JobsContext);
     const handleLogin = e => {
         e.preventDefault();
         if (email === user.username && password === user.password) {
-            setEmail('')
+            setLogged(true)
             setPassword('')
+            setEmail('')
+            localStorage.setItem('log', "oke")
             history.push("/main");
+        } else {
+            setPassword('')
+            setEmail('')
+            return <Redirect to="/" />
         }
-        setEmail('')
-        setPassword('')
     }
+
+
 
     return (
         <>
-            <h1 className="mt-4 text-center">Hello, User</h1>
+            <h1 className="mt-4 text-center">Hello, {isLogged ? 'True' : 'Visitor'}</h1>
             <form onSubmit={handleLogin} className="card mx-auto p-5 mt-5" style={{ width: 800 }}>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Email address</label>

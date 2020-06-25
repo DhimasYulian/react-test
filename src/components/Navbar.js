@@ -1,11 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import Logout from './Logout'
 
 const Navbar = () => {
     return (
         <>
             <nav className="navbar navbar-dark bg-primary mb-5">
                 <div className="container">
-                    <a className="navbar-brand" href="#"> <span style={{ fontWeight: 'bold' }}>GitHub </span>Jobs</a>
+                    <Link className="navbar-brand" to="/"> <span style={{ fontWeight: 'bold' }}>GitHub </span>Jobs</Link>
+                    <Logout />
                 </div>
             </nav>
 
