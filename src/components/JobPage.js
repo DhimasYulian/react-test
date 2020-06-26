@@ -2,8 +2,8 @@ import React, { useContext, useEffect } from 'react'
 import Navbar from './Navbar'
 import Pagination from './Pagination'
 import Search from './Search'
-import { JobsContext, UserContext } from '../AppContext';
-import { Link, Redirect } from 'react-router-dom';
+import { JobsContext } from '../AppContext';
+import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router'
 import Moment from 'react-moment'
 

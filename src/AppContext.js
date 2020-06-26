@@ -1,6 +1,4 @@
 import React, { createContext, useState, useEffect } from 'react'
-import Login from './components/Login'
-import App from './App'
 
 export const JobsContext = createContext();
 export const UserContext = createContext();

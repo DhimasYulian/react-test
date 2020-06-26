@@ -7,7 +7,7 @@ const Navbar = () => {
         <>
             <nav className="navbar navbar-dark bg-primary mb-5">
                 <div className="container">
-                    <Link className="navbar-brand" to="/"> <span style={{ fontWeight: 'bold' }}>GitHub </span>Jobs</Link>
+                    <Link className="navbar-brand" to="/main"> <span style={{ fontWeight: 'bold' }}>GitHub </span>Jobs</Link>
                     <Logout />
                 </div>
             </nav>
