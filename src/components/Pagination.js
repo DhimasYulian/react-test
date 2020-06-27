@@ -1,8 +1,6 @@
 import React from 'react'
-// import { JobsContext } from '../AppContext'
 
 const Pagination = ({ jobPerPage, totalJobs, paginate }) => {
-    // const { jobPerPage, jobs, setCurrentPage } = useContext(JobsContext);
     const pageNumber = [];
 
     for (let i = 1; i <= Math.ceil(totalJobs / jobPerPage); i++) {

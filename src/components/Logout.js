@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import { useHistory } from 'react-router';
-import { JobsContext } from '../AppContext'
+import { UserContext } from '../AppContext'
 
 const Logout = () => {
-    const { setLogged } = useContext(JobsContext);
+    const { setLogged } = useContext(UserContext);
     let history = useHistory()
     const handleLogout = () => {
         localStorage.removeItem("log");

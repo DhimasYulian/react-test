@@ -6,8 +6,8 @@ import GoogleLogin from 'react-google-login';
 
 const Login = () => {
     let history = useHistory()
-    const { user, email, password, setEmail, setPassword } = useContext(UserContext);
-    const { isLogged, setLogged } = useContext(JobsContext);
+    const { user, email, password, setEmail, setPassword, isLogged, setLogged } = useContext(UserContext);
+    // const { isLogged, setLogged } = useContext(JobsContext);
     const handleLogin = e => {
         e.preventDefault();
         if (email === user.username && password === user.password) {
@@ -25,6 +25,7 @@ const Login = () => {
 
     const handleSuccess = (response) => {
         setLogged(true)
+        console.log(response)
         localStorage.setItem('log', JSON.stringify(response.tokenId))
         history.push("/main");
     }
@@ -51,7 +52,7 @@ const Login = () => {
                 </form>
                 <hr />
                 <GoogleLogin className="my-3 btn btn-block mx-auto d-flex justify-content-center"
-                    clientId="YOUR_CLIENT_ID"
+                    clientId="124529524073-rhutchii2mg23pul4i4u13tmenaurh3l.apps.googleusercontent.com"
                     buttonText="Login with Google"
                     onSuccess={handleSuccess}
                     onFailure={handleFailure}

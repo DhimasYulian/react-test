@@ -45,11 +45,11 @@ const Search = () => {
             <div className="d-flex flex-row justify-content-between my-3 align-items-center">
                 <div className="form-group">
                     <label>Job Description</label>
-                    <input type="text" className="form-control" style={{ width: "280px" }} placeholder="Filter by description" value={desc} onChange={(e) => setDesc(e.target.value)} />
+                    <input type="text" className="form-control" style={{ width: "280px" }} placeholder="Filter by description" value={desc} onChange={(e) => setDescription(e.target.value)} />
                 </div>
                 <div className="form-group">
                     <label>Location</label>
-                    <input type="text" className="form-control" style={{ width: "280px" }} placeholder="Filter by location" value={loc} onChange={(e) => setLoc(e.target.value)} />
+                    <input type="text" className="form-control" style={{ width: "280px" }} placeholder="Filter by location" value={loc} onChange={(e) => setLocation(e.target.value)} />
                 </div>
                 <div className="form-group form-check my-auto">
                     <input type="checkbox" className="form-check-input" onChange={() => setFullTime(!fulltime)} />

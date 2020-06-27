@@ -2,14 +2,15 @@ import React, { useContext, useEffect } from 'react'
 import Navbar from './Navbar'
 import Pagination from './Pagination'
 import Search from './Search'
-import { JobsContext } from '../AppContext';
+import { JobsContext, UserContext } from '../AppContext';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router'
 import Moment from 'react-moment'
 
 const JobPage = () => {
     let history = useHistory()
-    const { jobs, heading, isLoading, isError, isLogged, setLogged, jobPerPage, currentPage, setCurrentPage } = useContext(JobsContext);
+    const { jobs, heading, isLoading, isError, jobPerPage, currentPage, setCurrentPage } = useContext(JobsContext);
+    const { isLogged, setLogged } = useContext(UserContext);
     const indexLastJob = currentPage * jobPerPage;
     const indexFirstJob = indexLastJob - jobPerPage;
     const currentJob = jobs.slice(indexFirstJob, indexLastJob);
